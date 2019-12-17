@@ -24,4 +24,7 @@ func _physics_process(delta):
 			flip = false
 			
 func dano():
+	get_node("anime").play("die")
+	
+func die():
 	$".".queue_free()

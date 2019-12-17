@@ -6,6 +6,7 @@ const VEL = 200
 const UP = Vector2(0, -1)
 
 var motion = Vector2()
+var life = 3
 
 func _physics_process(delta):
 	motion.y += GRAVIDADE
@@ -33,3 +34,10 @@ func _physics_process(delta):
 
 func _on_pes_body_entered(body):
 	body.dano()
+	motion.y = -200
+
+
+func _on_dano_body_entered(body):
+	life -= 1
+	if life == 0:
+		$".".queue_free()
