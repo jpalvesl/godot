@@ -1,0 +1,76 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Individual Sprites/adventurer-idle-00.png" type="Texture" id=2]
+[ext_resource path="res://Individual Sprites/adventurer-idle-01.png" type="Texture" id=3]
+[ext_resource path="res://Individual Sprites/adventurer-idle-02.png" type="Texture" id=4]
+[ext_resource path="res://Individual Sprites/adventurer-idle-03.png" type="Texture" id=5]
+[ext_resource path="res://Individual Sprites/adventurer-run-00.png" type="Texture" id=6]
+[ext_resource path="res://Individual Sprites/adventurer-run-01.png" type="Texture" id=7]
+[ext_resource path="res://Individual Sprites/adventurer-run-02.png" type="Texture" id=8]
+[ext_resource path="res://Individual Sprites/adventurer-run-03.png" type="Texture" id=9]
+[ext_resource path="res://Individual Sprites/adventurer-run-04.png" type="Texture" id=10]
+[ext_resource path="res://Individual Sprites/adventurer-run-05.png" type="Texture" id=11]
+[ext_resource path="res://Individual Sprites/adventurer-jump-00.png" type="Texture" id=12]
+[ext_resource path="res://tile_grama.tres" type="TileSet" id=13]
+[ext_resource path="res://Background.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.2514, 18.4596 )
+
+[node name="Node" type="Node"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 406.839, 640 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="KinematicBody2D"]
+frames = SubResource( 1 )
+animation = "jump"
+speed_scale = 1.3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 1.62109, 0.540344 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 13 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1507329, 0, 0, 1507330, 0, 0, 1507331, 0, 0, 1507332, 0, 0, 1507333, 0, 0, 1507334, 0, 0, 1507335, 0, 0, 1507336, 0, 0, 1507337, 0, 0, 1507338, 0, 0, 1507339, 0, 0, 1507340, 0, 0, 1507341, 0, 0, 1507342, 0, 0, 1507343, 0, 0, 1507344, 0, 0, 1507345, 0, 0, 1507346, 0, 0, 1507347, 0, 0, 1507348, 0, 0, 1507349, 0, 0, 1507350, 0, 0 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 1 )
+motion_mirroring = Vector2( 928, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 14 )
+centered = false
