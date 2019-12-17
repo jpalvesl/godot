@@ -7,7 +7,6 @@
 [node name="Node" type="Node"]
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-editor/display_folded = false
 position = Vector2( 460, 266 )
 
 [node name="TileMap" type="TileMap" parent="."]

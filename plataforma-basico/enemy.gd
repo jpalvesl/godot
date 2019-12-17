@@ -22,3 +22,6 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = false
 		if $".".position.x <= pos_inicial:
 			flip = false
+			
+func dano():
+	$".".queue_free()

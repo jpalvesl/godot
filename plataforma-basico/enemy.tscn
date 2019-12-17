@@ -16,6 +16,7 @@ animations = [ {
 extents = Vector2( 13.4717, 10.0032 )
 
 [node name="enemy" type="StaticBody2D"]
+collision_layer = 4
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
