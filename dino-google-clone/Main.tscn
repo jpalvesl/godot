@@ -9,7 +9,7 @@ extents = Vector2( 22.8242, 35.4323 )
 [node name="Node" type="Node"]
 
 [node name="Dino" type="Area2D" parent="."]
-position = Vector2( 70, -15.138 )
+position = Vector2( 54.1772, 654.693 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://title_sreen.gd" type="Script" id=1]
+[ext_resource path="res://kisspng-button-gamemaker-studio-computer-icons-tk-game-start-button-5b0f2ada893d22.6232529215277206665621.png" type="Texture" id=2]
+[ext_resource path="res://Start.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Creditos.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sair.tscn" type="PackedScene" id=5]
+[ext_resource path="res://core.png" type="Texture" id=6]
+[ext_resource path="res://FadeIn.tscn" type="PackedScene" id=7]
+
+[node name="TitleSreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.67017
+margin_right = -1.67017
+script = ExtResource( 1 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 170.549
+margin_top = 30.958
+margin_right = 1150.55
+margin_bottom = 704.958
+
+[node name="Label" type="Label" parent="Menu"]
+margin_right = 979.0
+margin_bottom = 14.0
+text = "aint nobody bring it us, we go haard till we get get we go harrrrd"
+
+[node name="Logo" type="TextureRect" parent="Menu"]
+margin_top = 18.0
+margin_right = 979.0
+margin_bottom = 388.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="ColunaCentral" type="HBoxContainer" parent="Menu"]
+margin_top = 392.0
+margin_right = 979.0
+margin_bottom = 692.0
+size_flags_vertical = 3
+
+[node name="Botoes" type="VBoxContainer" parent="Menu/ColunaCentral"]
+margin_right = 487.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+alignment = 1
+
+[node name="Start" parent="Menu/ColunaCentral/Botoes" instance=ExtResource( 3 )]
+margin_top = 40.0
+margin_right = 487.0
+margin_bottom = 100.0
+scene_to_load = "res://StartCena.tscn"
+
+[node name="Creditos" parent="Menu/ColunaCentral/Botoes" instance=ExtResource( 4 )]
+margin_top = 120.0
+margin_right = 487.0
+margin_bottom = 180.0
+scene_to_load = "res://CreditosCena.tscn"
+
+[node name="Sair" parent="Menu/ColunaCentral/Botoes" instance=ExtResource( 5 )]
+margin_top = 200.0
+margin_right = 487.0
+margin_bottom = 260.0
+scene_to_load = "res://SairCena.tscn"
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/ColunaCentral"]
+editor/display_folded = true
+margin_left = 491.0
+margin_right = 979.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Menu/ColunaCentral/CenterContainer"]
+margin_left = 94.0
+margin_right = 394.0
+margin_bottom = 300.0
+texture = ExtResource( 6 )
+
+[node name="FadeIn" parent="." instance=ExtResource( 7 )]
+visible = false
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
