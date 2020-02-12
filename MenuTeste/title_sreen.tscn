@@ -22,25 +22,25 @@ margin_right = 1150.55
 margin_bottom = 704.958
 
 [node name="Label" type="Label" parent="Menu"]
-margin_right = 979.0
+margin_right = 980.0
 margin_bottom = 14.0
 text = "aint nobody bring it us, we go haard till we get get we go harrrrd"
 
 [node name="Logo" type="TextureRect" parent="Menu"]
 margin_top = 18.0
-margin_right = 979.0
+margin_right = 980.0
 margin_bottom = 388.0
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="ColunaCentral" type="HBoxContainer" parent="Menu"]
 margin_top = 392.0
-margin_right = 979.0
+margin_right = 980.0
 margin_bottom = 692.0
 size_flags_vertical = 3
 
 [node name="Botoes" type="VBoxContainer" parent="Menu/ColunaCentral"]
-margin_right = 487.0
+margin_right = 488.0
 margin_bottom = 300.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -49,26 +49,25 @@ alignment = 1
 
 [node name="Start" parent="Menu/ColunaCentral/Botoes" instance=ExtResource( 3 )]
 margin_top = 40.0
-margin_right = 487.0
+margin_right = 488.0
 margin_bottom = 100.0
 scene_to_load = "res://StartCena.tscn"
 
 [node name="Creditos" parent="Menu/ColunaCentral/Botoes" instance=ExtResource( 4 )]
 margin_top = 120.0
-margin_right = 487.0
+margin_right = 488.0
 margin_bottom = 180.0
 scene_to_load = "res://CreditosCena.tscn"
 
 [node name="Sair" parent="Menu/ColunaCentral/Botoes" instance=ExtResource( 5 )]
 margin_top = 200.0
-margin_right = 487.0
+margin_right = 488.0
 margin_bottom = 260.0
 scene_to_load = "res://SairCena.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/ColunaCentral"]
-editor/display_folded = true
-margin_left = 491.0
-margin_right = 979.0
+margin_left = 492.0
+margin_right = 980.0
 margin_bottom = 300.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

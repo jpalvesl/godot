@@ -27,7 +27,7 @@ func _andar():
 	motion.y += GRAVIDADE
 	
 	if Input.is_action_just_pressed("ui_end"):
-        lado = !lado
+		lado = !lado
 	
 	if Input.is_action_pressed("ui_right"):
 		motion.x = VEL
